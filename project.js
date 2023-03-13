@@ -32,8 +32,9 @@ function getComputerChoice (choice) {
   }
   
 
-let playerSelection = prompt("Enter your choice: ");
+let playerSelection = prompt("Enter your choice: ").toLowerCase();
 let computerSelection = getComputerChoice(choice);
+
 
 
 function game () {
