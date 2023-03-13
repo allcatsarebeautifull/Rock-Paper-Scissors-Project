@@ -13,7 +13,7 @@ function getComputerChoice (choice) {
     if ((computerSelection === "rock" && playerSelection === "paper") ||
       (computerSelection === "paper" && playerSelection === "scissors") ||
       (computerSelection === "scissors" && playerSelection === "rock")) {
-     
+    
       playerScore++;
       console.log(computerScore, playerScore)
       return "Player Wins!";
@@ -25,8 +25,8 @@ function getComputerChoice (choice) {
         computerScore++;
         console.log(computerScore, playerScore)
         return "Computer Wins!";
-
- } else {
+ 
+      } else {
       return "It's a tie!";
     }
   }
@@ -36,20 +36,26 @@ let playerSelection = prompt("Enter your choice: ");
 let computerSelection = getComputerChoice(choice);
 
 
-
 function game () {
-  for (let i = 1; i < 5; i++) { 
-  console.log(playRound())
-  console.log("Player: "+playerScore+", Computer: "+computerScore+"")
+  for (let i = 0; i < 5; i++) { 
+  console.log(playRound(playerSelection, computerSelection))
+  console.log("Computer: "+computerScore+", Player: "+playerScore+"")
   playerSelection = prompt("Enter your choice: ");
   computerSelection = getComputerChoice(choice);
 }
 
-console.log(playRound(playerSelection, computerSelection));
-
 }
  game ();
 
+ if (playerScore < computerScore) {
+   console.log ("Computer wins the match!");
+ } else if (playerScore > computerScore) {
+  console.log ("Player wins the match!");
+ } else {
+  console.log ("The match is a tie!");
+ }
+
+ 
 
 
 
